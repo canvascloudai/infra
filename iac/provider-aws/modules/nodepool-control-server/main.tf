@@ -47,7 +47,7 @@ resource "aws_iam_instance_profile" "control_server" {
 resource "aws_launch_template" "control_server" {
   name          = "${var.prefix}control-server-node"
   image_id      = data.aws_ami.control_server.id
-  instance_type = var.machine_type
+  instance_type = "t3.xlarge"
   user_data     = base64encode(local.user_data)
 
   vpc_security_group_ids = var.security_group_ids

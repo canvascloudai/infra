@@ -56,8 +56,9 @@ variable "cluster_size" {
 }
 
 variable "machine_type" {
-  type    = string
-  default = "t3.medium"
+  type        = string
+  default     = "t3.xlarge"
+  description = "EC2 instance type for Nomad control-server nodes (CWM field test)"
 }
 
 variable "nomad_acl_token" {
